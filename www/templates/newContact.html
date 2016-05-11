@@ -1,0 +1,24 @@
+<ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">My Modal title</h1>
+    </ion-header-bar>
+    <ion-content>
+
+      
+
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Nombre</span>
+          <input type="text" ng-model="newContact.name">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Telefono</span>
+          <input type="tel" ng-model="newContact.tel">
+        </label>
+      </div>
+      <div class="row">
+        <div class="button button-balanced col" ng-click="addContact(newContact)">Agregar</div>
+        <div class="button button-assertive col" ng-click="addContactModal.hide()">Cancelar</div>
+      </div>
+    </ion-content>
+  </ion-modal-view>

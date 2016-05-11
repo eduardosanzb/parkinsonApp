@@ -1,0 +1,49 @@
+<ion-view view-title="Contactos">
+  <ion-content class="padding">
+    <div ng-if="level == 1">
+      <div ng-if="!contacts || contacts.length == 0">
+        <div class="item">No existe Ningun Contacto</div>
+      </div>
+      <div ng-if="contacts || contacts.length != 0">
+        <div class="list list-inset">
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Search" ng-model="query">
+          </label>
+        </div>
+        <div class="item" ng-repeat="contact in contacts | filter:query" ng-click="goToDetail(contact)">
+          {{contact.name}}: 
+          <span>{{contact.tel}}</span>
+        </div>
+      </div>
+        <!-- FOOTER -->
+      <div class="bar bar-footer" style="height: 60px">
+        <div class="button button-balanced" ng-click="addContactModal.show()">AGREGAR UN CONTACTO</div>
+        <div class="button button-positive" ng-click="goBack()">Menu principal</div>
+      </div>
+    </div>
+    <div ng-if="level != 1">
+      <div ng-if="!contacts || contacts.length == 0">
+        <div class="item" style="font-size: 30px;">No hay Contactos</div>
+      </div>
+      <div ng-if="contacts || contacts.length != 0">
+        <div class="list list-inset">
+          <label class="item item-input row" style="font-size: 50px">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Search" ng-model="query" style="font-size: 30px">
+          </label>
+        </div>
+        <div class="item" ng-repeat="contact in contacts | filter:query" ng-click="goToDetail(contact)" style="font-size: 30px">
+          {{contact.name}}: 
+          <span>{{contact.tel}}</span>
+        </div>
+      </div>
+        <!-- FOOTER -->
+      
+        <div class="button button-block button-assertive parkinson-button" style="bottom: 70px; position: fixed; width: 100%;" ng-click="addContactModal.show()">AGREGAR UN CONTACTO</div>
+        <div class="button button-block button-balanced parkinson-button" style="bottom: 0px; position: fixed; width: 100%;" ng-click="goBack()">Menu principal</div>
+      
+    </div>
+  </ion-content>
+  
+</ion-view>

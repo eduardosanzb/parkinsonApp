@@ -1,0 +1,32 @@
+<ion-view view-title="Telefono">
+  <ion-content class="padding">
+    <div ng-if="level==1">
+        <div class="row">
+        <label class="item item-input" style="width: 80%;">
+          <span class="input-label">Telephone</span>
+          <input type="tel" ng-model="number">
+        </label>
+        <i class="icon ion-backspace col"  style="font-size: 40px;" ng-click="delete()"></i>
+      </div>
+      <div class="row" ng-repeat="d in keys">
+         <button ng-repeat="val in d" class="col item button-dialer" ng-click="append(val)">{{val}}</button> 
+      </div>
+      <div class="button button-block button-balanced" ng-click="call()">Llamar</div>
+      <div class="button button-block button-positive" ng-click="goBack()">Menu principal</div>  
+    </div>
+    <div ng-if="level!=1">
+        <div class="row">
+        <label class="item item-input" style="width: 80%;">
+          <input type="tel" ng-model="number" style="font-size: 28px;">
+        </label>
+        <i class="icon ion-backspace col"  style="font-size: 40px;" ng-click="delete()"></i>
+      </div>
+      <div class="row" ng-repeat="d in keys">
+         <button ng-repeat="val in d" class="col item button-dialer2" ng-click="append(val)">{{val}}</button> 
+      </div>
+      <div class="button button-block button-balanced parkinson-button" ng-click="call()">Llamar</div>
+      <div class="button button-block button-positive parkinson-button" ng-click="goBack()">Menu principal</div>  
+    </div>
+    
+  </ion-content>
+</ion-view>

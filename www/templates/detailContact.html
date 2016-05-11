@@ -1,0 +1,34 @@
+<ion-modal-view>
+    <ion-header-bar>
+      <button class="button button-icon icon ion-ios-arrow-thin-left" ng-click="saveUser()"></button>
+      <h1 class="title">Editar {{currentUser.name}}</h1>
+    </ion-header-bar>
+    <ion-content>
+      <div ng-if="level == 1">
+        <div class="row item"><input type="text" ng-model="currentUser.name" ng-disabled="flag"></input></div>
+        <div class="row item"><input type="tel" ng-model="currentUser.tel"></input></div>
+        <div class="button button-block button-balanced" ng-click="call(currentUser.tel)">Llamar</div>
+        <div class="row">
+          <div class="col button butt" ng-click="setDr(currentUser.tel)"><img class="full-image" src="img/dr.png"></div>
+          <div class="col button butt"><img class="full-image" src="img/send.png"></div>
+        </div>
+        <div class="row">
+          <div class="col button butt" ng-click="delete()"><img class="full-image" src="img/eraser.png"></div>
+          <div class="col button butt" ng-click="saveUser()"><img class="full-image" src="img/out.png"></div>
+        </div>
+      </div>
+      <div ng-if="level != 1">
+        <div class="row item"><input type="text" ng-model="currentUser.name" ng-disabled="flag" style="font-size: 40px; padding: 5px"></input></div>
+        <div class="row item"><input type="tel" ng-model="currentUser.tel" style="font-size: 40px;"></input></div>
+        <div class="button button-block button-balanced" ng-click="call(currentUser.tel)" style="height: 70px;font-size: 60px;font-weight: bold;padding: 10px;">Llamar</div>
+        <div class="row">
+          <div class="col button butt" ng-click="setDr(currentUser.tel)"><img class="full-image" src="img/dr.png"></div>
+          <div class="col button butt"><img class="full-image" src="img/send.png"></div>
+        </div>
+        <div class="row">
+          <div class="col button butt" ng-click="delete()"><img class="full-image" src="img/eraser.png"></div>
+          <div class="col button butt" ng-click="saveUser()"><img class="full-image" src="img/out.png"></div>
+        </div>
+      </div>
+    </ion-content>
+</ion-modal-view>

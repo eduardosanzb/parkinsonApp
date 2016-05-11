@@ -1,0 +1,36 @@
+<ion-view view-title="Menu">
+  <ion-content>
+    <div ng-if="level == 1">
+      <div class="row">
+        <a class="col butt item " href="#/tel"><img class="full-image"src="img/tel.png"></a>
+        <a class="col butt item " href="#/agenda"><img class="full-image"src="img/agenda.png"></a>
+      </div>
+      <div class="row">
+        <a class="col butt item " ng-click="callHospital()"><img class="full-image"src="img/hospital.png"></a>
+        <a class="col butt item " ng-click="callDr()"><img class="full-image"src="img/dr.png"></a>
+      </div>
+      <div class="row">
+        <a class="col butt item " href="#/eraser"><img class="full-image"src="img/eraser.png"></a>
+        <a class="col butt item " ng-click="ionic.Platform.exitApp()"><img class="full-image"src="img/out.png"></a>
+      </div>
+      
+    </div>
+    <div ng-if="level == 2">
+    <ion-slide-box class="padding" on-slide-changed="nextSlide()" show-pager="false">
+      <ion-slide>
+        <a class="row butt2 item " ng-click="callHospital()"><img class="full-image"src="img/hospital.png"></a>
+        <a class="row butt2 item " ng-click="callDr()"><img class="full-image"src="img/dr.png"></a>
+        <a class="row butt2 item " href="#/tel"><img class="full-image"src="img/tel.png"></a>
+      </ion-slide>
+      <ion-slide>
+        <a class="row butt2 item " href="#/agenda"><img class="full-image"src="img/agenda.png"></a>
+        <a class="row butt2 item " href="#/eraser"><img class="full-image"src="img/eraser.png"></a>
+        <a class="row butt2 item " ng-click="ionic.Platform.exitApp()"><img class="full-image"src="img/out.png"></a>
+      </ion-slide>
+    </ion-slide-box>
+    <!-- Buttons for navigation -->
+    <div class="row bottom-button button button-block button-balanced" style="padding: 8px 10px 10px 70px;" ng-click="next()" ng-hide="index">Siguiente<i class="icon ion-chevron-right" style="    margin-left: 40px;"></i></div>
+    <div class="row bottom-button button button-block button-assertive row bottom-button" style="padding: 8px 10px 10px 70px;" ng-click="next()" ng-show="index">Anterior<i class="icon ion-chevron-left" style="    margin-left: 40px;"></i></div>
+    </div>
+  </ion-content>
+</ion-view>
