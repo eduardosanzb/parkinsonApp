@@ -9802,7 +9802,8 @@ a.button {
   color: red;
   font-size: 90px;
   border-width: inherit;
-  padding: 10px; }
+  padding: 10px;
+  margin-left: 95px; }
 
 .bottom-button {
   margin-bottom: 0px !important;
@@ -9814,6 +9815,14 @@ a.button {
   font-weight: bold;
   align-items: center;
   align-content: center; }
+
+parkinson-menu-button {
+  position: fixed;
+  right: 0px;
+  width: 100%;
+  height: inherit;
+  /* border: 3px solid #73AD21; */
+  padding: 10px; }
 
 .parkinson-button {
   height: 70px;

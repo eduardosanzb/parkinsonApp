@@ -37,8 +37,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
       url: '/chats',
       templateUrl: 'templates/tab-chats.html',
       controller: 'ChatsCtrl' 
-    })
-
+  })
   .state('tel',{
     url:'/tel',
     templateUrl:'templates/tel.html',
@@ -71,11 +70,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
           return agenda;
       }
     }
-  })
-
-
-
-  ;
+  });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/chats');
